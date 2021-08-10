@@ -20,7 +20,7 @@ var IPancakePair = _interopDefault(require('@pancakeswap-libs/pancake-swap-core/
 var _SOLIDITY_TYPE_MAXIMA;
 
 (function (ChainId) {
-  ChainId[ChainId["MAINNET"] = 56] = "MAINNET";
+  ChainId[ChainId["MAINNET"] = 97] = "MAINNET";
   ChainId[ChainId["TESTNET"] = 97] = "TESTNET";
 })(exports.ChainId || (exports.ChainId = {}));
 
