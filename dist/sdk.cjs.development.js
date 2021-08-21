@@ -757,7 +757,7 @@ var Pair = /*#__PURE__*/function () {
   function Pair(tokenAmountA, tokenAmountB) {
     var tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
     ? [tokenAmountA, tokenAmountB] : [tokenAmountB, tokenAmountA];
-    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'Cake-LP', 'Pancake LPs');
+    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'VXC-LP', 'VenetianX LPs');
     this.tokenAmounts = tokenAmounts;
   }
 
@@ -1414,7 +1414,8 @@ var Router = /*#__PURE__*/function () {
           args = [amountIn, amountOut, path, to, deadline];
           value = ZERO_HEX;
         } else {
-          methodName = useFeeOnTransfer ? 'swapExactTokensForTokens' : 'swapExactTokensForTokens'; // (uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
+          methodName = useFeeOnTransfer ? 'swapExactTokensForTokens' // swapExactTokensForETHSupportingFeeOnTransferTokens
+          : 'swapExactTokensForTokens'; // (uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
 
           args = [amountIn, amountOut, path, to, deadline];
           value = ZERO_HEX;
