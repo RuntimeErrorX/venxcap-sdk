@@ -1414,7 +1414,7 @@ var Router = /*#__PURE__*/function () {
           args = [amountIn, amountOut, path, to, deadline];
           value = ZERO_HEX;
         } else {
-          methodName = useFeeOnTransfer ? 'swapExactTokensForTokens' // swapExactTokensForETHSupportingFeeOnTransferTokens
+          methodName = useFeeOnTransfer ? 'swapExactTokensForETHSupportingFeeOnTransferTokens' // swapExactTokensForETHSupportingFeeOnTransferTokens
           : 'swapExactTokensForTokens'; // (uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
 
           args = [amountIn, amountOut, path, to, deadline];
