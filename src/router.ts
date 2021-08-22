@@ -108,7 +108,7 @@ export abstract class Router {
           value = ZERO_HEX
         } else {
           methodName = useFeeOnTransfer
-            ? 'swapExactTokensForETHSupportingFeeOnTransferTokens' // swapExactTokensForETHSupportingFeeOnTransferTokens
+            ? 'swapETHForExactTokens' // swapExactTokensForETHSupportingFeeOnTransferTokens
             : 'swapExactTokensForTokens'
           // (uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
           args = [amountIn, amountOut, path, to, deadline]
