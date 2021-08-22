@@ -111,8 +111,14 @@ export abstract class Router {
             ? 'swapETHForExactTokens' // swapExactTokensForETHSupportingFeeOnTransferTokens
             : 'swapExactTokensForTokens'
           // (uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
-          args = [amountIn, amountOut, path, to, deadline]
-          value = ZERO_HEX
+          if(methodName == 'swapETHForExactTokens') {
+            args = [amountOut, path, to, deadline]
+            value = amountIn
+          } else {
+            args = [amountIn, amountOut, path, to, deadline]
+            value = ZERO_HEX
+          }
+
         }
         break
       case TradeType.EXACT_OUTPUT:
